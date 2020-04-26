@@ -11,8 +11,8 @@ public class NewsSteps {
         newsPage = new NewsPage(driver);
     }
 
-    public void getRecentNews () {
-        newsPage
+    public String getRecentNews () {
+        return newsPage
                 .openPage()
                 .getTopNews();
     }

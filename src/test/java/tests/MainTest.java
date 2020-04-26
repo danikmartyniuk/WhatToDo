@@ -16,6 +16,23 @@ public class MainTest extends BaseTest{
 
     @Test
     public void getNews () {
-        newsSteps.getRecentNews();
+        System.out.println(newsSteps.getRecentNews());
+    }
+
+    @Test
+    public void getProblemToSolve () {
+        System.out.println(eulerSteps.getProblem());
+    }
+
+    @Test
+    public void getThingToDo () {
+        System.out.println(ideasSteps.getIdea());
+    }
+
+    @Test
+    public void getFilm () {
+        filmsSteps
+                .openSearch()
+                .getFilm();
     }
 }

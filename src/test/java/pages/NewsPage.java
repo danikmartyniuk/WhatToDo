@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class NewsPage extends BasePage {
 
-    private static final By RECENT_NEWS = By.cssSelector(".entry__link io-block-link");
+    private static final By RECENT_NEWS = By.xpath("//a[contains(@data-ua-hash,'news_bytime')]");
 
     public NewsPage(WebDriver driver) {
         super(driver);
@@ -24,12 +24,11 @@ public class NewsPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("latest")));
     }
 
-    public void getTopNews () {
-        System.out.println(driver.findElements(RECENT_NEWS).size());
-//        String[] news = new String[3];
-//        for (int i = 0; i < news.length; i++) {
-//            news[i] = driver.findElements(RECENT_NEWS).get(16 + i).getAttribute("href");
-//        }
-//        System.out.println(Arrays.toString(news));
+    public String getTopNews () {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < 3; i++) {
+            sb.append(driver.findElements(RECENT_NEWS).get(i).getAttribute("href")).append("\n");
+        }
+        return sb.deleteCharAt(sb.length() - 1).toString();
     }
 }

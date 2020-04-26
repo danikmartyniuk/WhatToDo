@@ -5,9 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
-import steps.FactsSteps;
-import steps.NewsSteps;
-import steps.QuotesSteps;
+import steps.*;
 import utils.CapabilitiesGenerator;
 import utils.TestListener;
 
@@ -18,6 +16,9 @@ public class BaseTest {
     QuotesSteps quotesSteps;
     FactsSteps factsSteps;
     NewsSteps newsSteps;
+    EulerSteps eulerSteps;
+    IdeasSteps ideasSteps;
+    FilmsSteps filmsSteps;
 
     @BeforeTest
     public void setUp () {
@@ -27,12 +28,15 @@ public class BaseTest {
         quotesSteps = new QuotesSteps(driver);
         factsSteps = new FactsSteps(driver);
         newsSteps = new NewsSteps(driver);
+        eulerSteps = new EulerSteps(driver);
+        ideasSteps = new IdeasSteps(driver);
+        filmsSteps = new FilmsSteps(driver);
     }
 
-    @AfterTest
-    public void close () {
-        driver.quit();
-    }
+//    @AfterTest
+//    public void close () {
+//        driver.quit();
+//    }
 
     public WebDriver getDriver () {
         return this.driver;
