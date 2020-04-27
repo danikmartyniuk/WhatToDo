@@ -18,9 +18,10 @@ public class FilmsSteps {
         return this;
     }
 
-    public void getFilm () {
-        filmsPage
-                .setParameters()
+    public String getFilm (String[] genres, String decade) {
+        return filmsPage
+                .setGenre(genres)
+                .setDecadence(decade)
                 .showFilms()
                 .getLinkToFilm();
     }

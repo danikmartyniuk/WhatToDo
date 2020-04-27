@@ -2,7 +2,7 @@ package tests;
 
 import org.testng.annotations.Test;
 
-public class MainTest extends BaseTest{
+public class MainTest extends BaseTest {
 
     @Test
     public void getQuote () {
@@ -31,8 +31,8 @@ public class MainTest extends BaseTest{
 
     @Test
     public void getFilm () {
-        filmsSteps
+        System.out.println(filmsSteps
                 .openSearch()
-                .getFilm();
+                .getFilm(new String[]{"детектив", "триллер"}, "2010"));
     }
 }
