@@ -35,4 +35,14 @@ public class MainTest extends BaseTest {
                 .openSearch()
                 .getFilm(new String[]{"детектив", "триллер"}, "2010"));
     }
+
+    @Test
+    public void getBook () {
+        System.out.println(booksSteps.getBook("f"));
+    }
+
+    @Test
+    public void getMusic () {
+
+    }
 }

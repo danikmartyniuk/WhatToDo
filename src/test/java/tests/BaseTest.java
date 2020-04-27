@@ -19,6 +19,7 @@ public class BaseTest {
     EulerSteps eulerSteps;
     IdeasSteps ideasSteps;
     FilmsSteps filmsSteps;
+    BooksSteps booksSteps;
 
     @BeforeTest
     public void setUp () {
@@ -31,12 +32,13 @@ public class BaseTest {
         eulerSteps = new EulerSteps(driver);
         ideasSteps = new IdeasSteps(driver);
         filmsSteps = new FilmsSteps(driver);
+        booksSteps = new BooksSteps(driver);
     }
 
-//    @AfterTest
-//    public void close () {
-//        driver.quit();
-//    }
+    @AfterTest
+    public void close () {
+        driver.quit();
+    }
 
     public WebDriver getDriver () {
         return this.driver;
