@@ -7,12 +7,16 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import steps.*;
 import utils.CapabilitiesGenerator;
+import utils.FilesWriter;
 import utils.TestListener;
+
+import java.io.IOException;
 
 @Listeners({TestListener.class})
 public class BaseTest {
 
     WebDriver driver;
+
     QuotesSteps quotesSteps;
     FactsSteps factsSteps;
     NewsSteps newsSteps;
@@ -23,7 +27,8 @@ public class BaseTest {
     MusicSteps musicSteps;
 
     @BeforeTest
-    public void setUp () {
+    public void setUp () throws IOException {
+        FilesWriter.cleanFile("src/test/resources/results.txt");
         driver = new ChromeDriver(CapabilitiesGenerator.getChromeOptions());
         driver.manage().window().maximize();
 
