@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.IdeasPage;
 
@@ -11,6 +12,7 @@ public class IdeasSteps {
         ideasPage = new IdeasPage(driver);
     }
 
+    @Step ("Получаем случайное задание")
     public String getIdea () {
         return ideasPage
                 .openPage()

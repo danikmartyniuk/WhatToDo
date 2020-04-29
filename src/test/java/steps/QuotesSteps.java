@@ -1,5 +1,6 @@
 package steps;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import pages.QuotesPage;
 
@@ -11,6 +12,7 @@ public class QuotesSteps {
         quotesPage = new QuotesPage(driver);
     }
 
+    @Step ("Получаем случайную цитату")
     public String getTopQuote () {
         return quotesPage
                 .openPage()

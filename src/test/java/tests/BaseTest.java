@@ -20,6 +20,7 @@ public class BaseTest {
     IdeasSteps ideasSteps;
     FilmsSteps filmsSteps;
     BooksSteps booksSteps;
+    MusicSteps musicSteps;
 
     @BeforeTest
     public void setUp () {
@@ -33,6 +34,7 @@ public class BaseTest {
         ideasSteps = new IdeasSteps(driver);
         filmsSteps = new FilmsSteps(driver);
         booksSteps = new BooksSteps(driver);
+        musicSteps = new MusicSteps(driver);
     }
 
     @AfterTest

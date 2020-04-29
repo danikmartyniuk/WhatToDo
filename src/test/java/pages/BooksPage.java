@@ -53,7 +53,7 @@ public class BooksPage extends BasePage {
     }
 
     public String getRandomBook () {
-        int num = (int) (Math.random() * 100);
+        int num = (int) (Math.random() * driver.findElements(BOOK_TITLE).size());
         return driver.findElements(BOOK_TITLE).get(num).getText() + ", " +
                  driver.findElements(BOOK_AUTHOR).get(num).getText()
                         .substring(0, driver.findElements(BOOK_AUTHOR).get(num).getText().indexOf(",")) +
